@@ -1,4 +1,8 @@
 weisong-common
 ==============
 
-Common features
+Included features
+
+ - Property files scanning
+ - MBean export
+
