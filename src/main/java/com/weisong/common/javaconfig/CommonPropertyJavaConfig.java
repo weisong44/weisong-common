@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import com.weisong.common.ReadablePropertyPlaceholderConfigurer;
 
 @Configuration
 public class CommonPropertyJavaConfig {
@@ -20,8 +21,8 @@ public class CommonPropertyJavaConfig {
     };
     
     @Bean
-    static public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() throws Exception {
-        PropertyPlaceholderConfigurer c = new PropertyPlaceholderConfigurer();
+    static public ReadablePropertyPlaceholderConfigurer propertyPlaceholderConfigurer() throws Exception {
+    	ReadablePropertyPlaceholderConfigurer c = new ReadablePropertyPlaceholderConfigurer();
         c.setIgnoreResourceNotFound(true);
         c.setIgnoreUnresolvablePlaceholders(true);
         c.setLocations(createResources(locations));
